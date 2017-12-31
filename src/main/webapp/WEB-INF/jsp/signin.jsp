@@ -34,7 +34,7 @@
     <div class="sign-in-wrapper">
         <div class="sign-in-inner">
             <div class="login-brand text-center">
-                <i class="fa fa-database m-right-xs"></i> BookStore <strong class="text-skin">后台登录界面</strong>
+                <i class="fa fa-database m-right-xs"></i> 书城 <strong class="text-skin">后台登录界面</strong>
             </div>
 
             <form>
@@ -101,10 +101,10 @@
             success: function(result) {                    //result为返回值
                 console.log(result);
                 if(result.success){
-                    $('#admin_message').html("X").css("color","red");
+                    $('#admin_message').html("账户不存在").css("color","red");
                     $('#_name')[0].focus();
                 }else {
-                    $('#admin_message').html("√").css("color","green");
+                    $('#admin_message').html("账户可用").css("color","green");
 
                 }
             }
@@ -126,7 +126,7 @@
                 dataType: "json",
                 success: function(result) {                    //result为返回值
                     if(result.success) {
-                        window.location.href = "/index";
+                        window.location.href = "index";
                     } else {
                         alert(result.message);
                     }

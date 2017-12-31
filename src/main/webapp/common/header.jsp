@@ -38,7 +38,7 @@
                     <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 
                         <li>
-                            <a href="/toLogin">
+                            <a href="/bookstore/logout">
                                 <i class="icon-off"></i> 退出
                             </a>
                         </li>

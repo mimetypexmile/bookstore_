@@ -92,6 +92,9 @@
     //ajax 判断账户是否已经被注册
     $('#registerAdmin').blur(function () {
         var $registerAdmin = $('#registerAdmin').val();
+        if($registerAdmin.length==0){
+            $('#admin_message').html("账户不能为空").css("color","red");
+        }
         if($registerAdmin==""||$registerAdmin==null){
             $('#admin_message').html("账户不能为空").css("color","red");
             $('#registerAdmin')[0].focus();
@@ -148,8 +151,8 @@
                 console.log(result);
                 console.log(result.success);
                 if(result.success){
-                    alert(result.message+"点击跳转到登录界面");
-                    window.location.href="/toLogin";
+                    alert(result.message+"点击确定跳转到登录界面");
+                    window.location.href="/bookstore/toLogin";
                 }
             }
         });
