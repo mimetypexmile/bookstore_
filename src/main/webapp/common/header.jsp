@@ -27,7 +27,7 @@
             <ul class="nav ace-nav">
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+                        <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="user's Photo" />
                         <span class="user-info" style="color: lightcoral">
 									<small>欢迎您,</small>
 

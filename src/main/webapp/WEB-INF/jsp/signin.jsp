@@ -130,6 +130,9 @@
                     } else {
                         alert(result.message);
                     }
+                },
+                error:function () {
+                    alert("服务器异常")
                 }
             });
         });

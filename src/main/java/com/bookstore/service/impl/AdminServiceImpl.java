@@ -87,16 +87,28 @@ public class AdminServiceImpl implements AdminService {
             AdminExample.Criteria criteria = example.createCriteria();
             criteria.andNameEqualTo(admin.getName());
             List<Admin> admins = adminMapper.selectByExample(example);
-            if(admins.size()>0)
+            if(admins.size()>0) {
                 existAdmin = admins.get(0);
-        }catch (Exception e){
-            logger.error(e.getMessage(),e);
-        }
-        if(existAdmin != null){
-            if(existAdmin.getIsDelete() == "0"){
-                //todo 更新数据库的上一次登陆时间
+                AdminExample example1 = new AdminExample();
+                existAdmin.setLastLoginTime(new Date());
+                System.out.println(existAdmin.getId());
+                example1.createCriteria().andIdEqualTo(existAdmin.getId());
+                adminMapper.updateByExampleSelective(existAdmin,example1);
             }
+            if(existAdmin!= null &&existAdmin.getIsDelete() == "0"){
+                //todo 更新数据库的上一次登陆时间
+//                Admin updateAdmin =  new Admin();
+//                updateAdmin.setLastLoginTime(new Date());
+//                AdminExample example1 = new AdminExample();
+//                AdminExample.Criteria criteria1 = example.createCriteria();
+//                criteria1.andIdEqualTo(existAdmin.getId());
+//                int i = adminMapper.updateByExampleSelective(updateAdmin, example1);
+//                System.out.println(i);
+            }
+        }catch (Exception e) {
+            logger.error(e.getMessage(), e);
         }
+
         return existAdmin;
     }
 }

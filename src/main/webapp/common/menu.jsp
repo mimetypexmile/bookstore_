@@ -12,7 +12,7 @@
     </script>
     <ul class="nav nav-list">
         <li class="active">
-            <a href="/">
+            <a href="index">
                 <i class="icon-dashboard"></i>
                 <span class="menu-text">首页 </span>
             </a>
@@ -30,7 +30,7 @@
 
                 <li>
                     <!--查看所有的管理员-->
-                    <a href="/listAdmins">
+                    <a href="listAdmins">
                         <i class="icon-double-angle-right"></i> 管理员列表
                     </a>
                 </li>
