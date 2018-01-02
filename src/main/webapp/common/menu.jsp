@@ -34,12 +34,7 @@
                         <i class="icon-double-angle-right"></i> 管理员列表
                     </a>
                 </li>
-                <!--<li>
-                    <a href="#" class="dropdown-toggle">
-                        <i class="icon-double-angle-right"></i> 管理员
-                    </a>
 
-                </li>-->
             </ul>
         </li>
 
@@ -82,7 +77,7 @@
 
             <ul class="submenu">
                 <li>
-                    <a href="#">
+                    <a href="listBooks">
                         <i class="icon-double-angle-right"></i> 书籍列表
                     </a>
                 </li>

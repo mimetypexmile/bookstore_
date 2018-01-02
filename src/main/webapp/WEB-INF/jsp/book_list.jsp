@@ -81,7 +81,7 @@
             <div class="page-content">
                 <div class="page-header">
                     <h3>
-                        管理员管理
+                        书籍管理
                         <small>
                             <i class="icon-double-angle-right"></i>
                         </small>
@@ -89,7 +89,7 @@
                         <small>
                             <i class="icon-double-angle-right"></i>
                         </small>
-                        <a href="toSignup">+新增</a>
+
                     </h3>
                 </div>
                 <!-- /.page-header -->
@@ -101,7 +101,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="table-header">
-                                        管理员列表
+                                        书籍列表
                                     </div>
 
                                     <div class="table-responsive">
@@ -111,34 +111,38 @@
                                                 <th class="center">
                                                     ID
                                                 </th>
-                                                <th>登录名</th>
-                                                <th>状态</th>
+                                                <th>书名</th>
+                                                <th>价格</th>
+                                                <th>作者</th>
                                                 <th class="hidden-480">
-                                                    <i class="icon-time bigger-110 hidden-480"></i>创建时间
+                                                    <i class="icon-time bigger-110 hidden-480"></i>出版时间
                                                 </th>
 
                                                 <th>
-                                                    <i class="icon-time bigger-110 hidden-480"></i> 上一次登录时间
+                                                    <i class="icon-time bigger-110 hidden-480"></i> 入库时间
                                                 </th>
 
+                                                <th>库存</th>
                                                 <th>操作</th>
                                             </tr>
                                             </thead>
 
                                             <tbody id="dataTbody">
-                                            <c:forEach items="${pageInfo.list }" var="admin">
+                                            <c:forEach items="${pageInfo.list }" var="book">
                                                 <tr>
-                                                    <th>${admin.id }</th>
-                                                    <th>${admin.name }</th>
+                                                    <th>${book.id }</th>
+                                                    <th>${book.bookname }</th>
                                                     <th>
-                                                        <span class="label label-sm label-success">${admin.status }</span>
+                                                        <span class="label label-sm label-info">￥${book.price }</span>
+                                                    </th>
+                                                    <th>${book.author}</th>
+                                                    <th><fmt:setLocale value="zh"/>
+                                                        <fmt:formatDate value="${book.publishTime}" pattern="yyyy-MM-d HH:mm:ss"/>
                                                     </th>
                                                     <th><fmt:setLocale value="zh"/>
-                                                        <fmt:formatDate value="${admin.createTime}" pattern="yyyy-MM-d HH:mm:ss EEEE"/></th>
-
-                                                    <th><fmt:setLocale value="zh"/>
-                                                        <fmt:formatDate value="${admin.lastLoginTime}" pattern="yyyy-MM-d HH:mm:ss EEEE" /></th>
-
+                                                        <fmt:formatDate value="${book.created}" pattern="yyyy-MM-d HH:mm:ss" />
+                                                    </th>
+                                                    <th>${book.inventory}</th>
                                                     <th>
                                                         <button class="btn btn-primary btn-sm">
                                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -146,7 +150,7 @@
                                                         </button>
                                                         <button class="btn btn-danger btn-sm">
                                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                                            <a href="javascript:del(${admin.id} )"> 删除 </a>
+                                                            <a href="javascript:del(${book.id} )"> 下架 </a>
                                                         </button>
                                                     </th>
                                                 </tr>
@@ -174,9 +178,9 @@
                                             <div class="col-md-6">
                                                 <nav aria-label="Page navigation">
                                                     <ul class="pagination">
-                                                        <li><a href="listAdmins?pn=1">首页</a></li>
+                                                        <li><a href="listBooks?pn=1">首页</a></li>
                                                         <c:if test="${pageInfo.hasPreviousPage }">
-                                                            <li><a href="listAdmins?pn=${pageInfo.pageNum-1}"
+                                                            <li><a href="listBooks?pn=${pageInfo.pageNum-1}"
                                                                    aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
                                                             </a></li>
                                                         </c:if>
@@ -187,16 +191,16 @@
                                                                 <li class="active"><a href="#">${page_Num }</a></li>
                                                             </c:if>
                                                             <c:if test="${page_Num != pageInfo.pageNum }">
-                                                                <li><a href="listAdmins?pn=${page_Num }">${page_Num }</a></li>
+                                                                <li><a href="listBooks?pn=${page_Num }">${page_Num }</a></li>
                                                             </c:if>
 
                                                         </c:forEach>
                                                         <c:if test="${pageInfo.hasNextPage }">
-                                                            <li><a href="listAdmins?pn=${pageInfo.pageNum+1 }"
+                                                            <li><a href="listBooks?pn=${pageInfo.pageNum+1 }"
                                                                    aria-label="Next"> <span aria-hidden="true">&raquo;</span>
                                                             </a></li>
                                                         </c:if>
-                                                        <li><a href="listAdmins?pn=${pageInfo.pages}">末页</a></li>
+                                                        <li><a href="listBooks?pn=${pageInfo.pages}">末页</a></li>
                                                     </ul>
                                                 </nav>
                                             </div>
