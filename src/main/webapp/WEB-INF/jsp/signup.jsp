@@ -53,7 +53,7 @@
 
                 <div class="m-top-md p-top-sm">
                     <div class="font-12 text-center m-bottom-xs">已经拥有账户?</div>
-                    <a href="/toLogin" class="btn btn-default block">去登录</a>
+                    <a href="toLogin" class="btn btn-default block">去登录</a>
                 </div>
             </form>
         </div><!-- ./sign-in-inner -->
@@ -152,7 +152,7 @@
                 console.log(result.success);
                 if(result.success){
                     alert(result.message+"点击确定跳转到登录界面");
-                    window.location.href="/bookstore/toLogin";
+                    window.location.href="toLogin";
                 }
             }
         });

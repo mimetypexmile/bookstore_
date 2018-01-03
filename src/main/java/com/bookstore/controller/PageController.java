@@ -33,4 +33,9 @@ public class PageController {
     public String toSignupPage(){
         return "signup";
     }
+
+    @RequestMapping("/user_order_timeline")
+    public String toOrders(){
+        return "user_order_timeline";
+    }
 }

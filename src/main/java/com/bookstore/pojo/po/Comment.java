@@ -7,6 +7,8 @@ public class Comment {
 
     private String grade;
 
+    private Long bookId;
+
     public Long getId() {
         return id;
     }
@@ -29,5 +31,13 @@ public class Comment {
 
     public void setGrade(String grade) {
         this.grade = grade == null ? null : grade.trim();
+    }
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
 }

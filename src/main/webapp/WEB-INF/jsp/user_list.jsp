@@ -81,7 +81,7 @@
             <div class="page-content">
                 <div class="page-header">
                     <h3>
-                        管理员管理
+                        用户管理
                         <small>
                             <i class="icon-double-angle-right"></i>
                         </small>
@@ -89,7 +89,6 @@
                         <small>
                             <i class="icon-double-angle-right"></i>
                         </small>
-                        <a href="toSignup">+新增</a>
                     </h3>
                 </div>
                 <!-- /.page-header -->
@@ -101,7 +100,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="table-header">
-                                        管理员列表
+                                        用户列表
                                     </div>
 
                                     <div class="table-responsive">
@@ -242,7 +241,7 @@
         if(del){
             $.ajax({
                 type: "GET",
-                url: "admins"+"/"+aid,
+                url: "",
                 dataType: "json",
                 success: function(data) {
 

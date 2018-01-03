@@ -34,7 +34,6 @@
                         <i class="icon-double-angle-right"></i> 管理员列表
                     </a>
                 </li>
-
             </ul>
         </li>
 
@@ -71,7 +70,6 @@
             <a href="#" class="dropdown-toggle">
                 <i class="icon-tag"></i>
                 <span class="menu-text"> 书籍管理 </span>
-
                 <b class="arrow icon-angle-down"></b>
             </a>
 
@@ -82,8 +80,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="icon-double-angle-right"></i> 统计
+                    <a href="countBooks">
+                        <i class="icon-double-angle-right"></i> 书籍分类统计
                     </a>
                 </li>
             </ul>

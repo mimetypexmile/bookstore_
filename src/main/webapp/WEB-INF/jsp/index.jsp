@@ -69,7 +69,7 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="icon-home home-icon"></i>
-                        <a href="/index">首页</a>
+                        <a href="index">首页</a>
                     </li>
 
                 </ul>

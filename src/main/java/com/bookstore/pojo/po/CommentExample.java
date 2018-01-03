@@ -303,6 +303,66 @@ public class CommentExample {
             addCriterion("grade not between", value1, value2, "grade");
             return (Criteria) this;
         }
+
+        public Criteria andBookIdIsNull() {
+            addCriterion("book_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdIsNotNull() {
+            addCriterion("book_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdEqualTo(Long value) {
+            addCriterion("book_id =", value, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdNotEqualTo(Long value) {
+            addCriterion("book_id <>", value, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdGreaterThan(Long value) {
+            addCriterion("book_id >", value, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("book_id >=", value, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdLessThan(Long value) {
+            addCriterion("book_id <", value, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdLessThanOrEqualTo(Long value) {
+            addCriterion("book_id <=", value, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdIn(List<Long> values) {
+            addCriterion("book_id in", values, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdNotIn(List<Long> values) {
+            addCriterion("book_id not in", values, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdBetween(Long value1, Long value2) {
+            addCriterion("book_id between", value1, value2, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookIdNotBetween(Long value1, Long value2) {
+            addCriterion("book_id not between", value1, value2, "bookId");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

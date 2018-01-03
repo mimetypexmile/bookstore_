@@ -5,6 +5,7 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="VARCHAR" />
+    <result column="book_id" property="bookId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, content, grade
+    id, content, grade, book_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bookstore.pojo.po.CommentExample" >
     select
@@ -98,10 +99,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.bookstore.pojo.po.Comment" >
-    insert into comment (id, content, grade
-      )
-    values (#{id,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}
-      )
+    insert into comment (id, content, grade, 
+      book_id)
+    values (#{id,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}, 
+      #{bookId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.bookstore.pojo.po.Comment" >
     insert into comment
@@ -115,6 +116,9 @@
       <if test="grade != null" >
         grade,
       </if>
+      <if test="bookId != null" >
+        book_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -125,6 +129,9 @@
       </if>
       <if test="grade != null" >
         #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="bookId != null" >
+        #{bookId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -146,6 +153,9 @@
       <if test="record.grade != null" >
         grade = #{record.grade,jdbcType=VARCHAR},
       </if>
+      <if test="record.bookId != null" >
+        book_id = #{record.bookId,jdbcType=BIGINT},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -155,7 +165,8 @@
     update comment
     set id = #{record.id,jdbcType=BIGINT},
       content = #{record.content,jdbcType=VARCHAR},
-      grade = #{record.grade,jdbcType=VARCHAR}
+      grade = #{record.grade,jdbcType=VARCHAR},
+      book_id = #{record.bookId,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -169,13 +180,17 @@
       <if test="grade != null" >
         grade = #{grade,jdbcType=VARCHAR},
       </if>
+      <if test="bookId != null" >
+        book_id = #{bookId,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.bookstore.pojo.po.Comment" >
     update comment
     set content = #{content,jdbcType=VARCHAR},
-      grade = #{grade,jdbcType=VARCHAR}
+      grade = #{grade,jdbcType=VARCHAR},
+      book_id = #{bookId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
