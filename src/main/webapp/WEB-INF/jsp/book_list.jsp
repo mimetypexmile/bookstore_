@@ -112,45 +112,57 @@
                                                     ID
                                                 </th>
                                                 <th>书名</th>
-                                                <th>价格</th>
-                                                <th>作者</th>
-                                                <th class="hidden-480">
-                                                    <i class="icon-time bigger-110 hidden-480"></i>出版时间
-                                                </th>
-
+                                                <th>状态</th>
                                                 <th>
                                                     <i class="icon-time bigger-110 hidden-480"></i> 入库时间
                                                 </th>
-
                                                 <th>库存</th>
                                                 <th>操作</th>
                                             </tr>
                                             </thead>
-
                                             <tbody id="dataTbody">
                                             <c:forEach items="${pageInfo.list }" var="book">
                                                 <tr>
                                                     <th>${book.id }</th>
                                                     <th>${book.bookname }</th>
-                                                    <th>
-                                                        <span class="label label-sm label-info">￥${book.price }</span>
-                                                    </th>
-                                                    <th>${book.author}</th>
+                                                    <c:if test="${book.status==1}">
+                                                        <th style="color: red">热销中</th>
+                                                    </c:if>
+                                                    <c:if test="${book.status==2}">
+                                                        <th style="color: black">已下架</th>
+                                                    </c:if>
                                                     <th><fmt:setLocale value="zh"/>
-                                                        <fmt:formatDate value="${book.publishTime}" pattern="yyyy-MM-d HH:mm:ss"/>
-                                                    </th>
-                                                    <th><fmt:setLocale value="zh"/>
-                                                        <fmt:formatDate value="${book.created}" pattern="yyyy-MM-d HH:mm:ss" />
+                                                        <fmt:formatDate value="${book.created}" pattern="yyyy-MM-d" />
                                                     </th>
                                                     <th>${book.inventory}</th>
                                                     <th>
                                                         <button class="btn btn-primary btn-sm">
-                                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                                            编辑
+                                                            <a role="button" class="blue"
+                                                               data-toggle="modal"
+                                                               data-target="#book-modal-table"
+                                                               onclick="loadData(${book.id})">
+                                                                查看
+                                                            </a>
                                                         </button>
-                                                        <button class="btn btn-danger btn-sm">
+                                                        <c:if test="${book.status==1}">
+                                                            <button class="btn btn-toolbar btn-sm">
+                                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                                                <a href="javascript:down(${book.id} )"> 下架 </a>
+                                                            </button>
+                                                        </c:if>
+                                                        <c:if test="${book.status==2}">
+                                                            <button class="btn btn-toolbar btn-sm">
+                                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                                                <a href="javascript:up(${book.id} )"> 上架 </a>
+                                                            </button>
+                                                        </c:if>
+                                                        <button class="btn btn-toolbar btn-sm">
                                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                                            <a href="javascript:del(${book.id} )"> 下架 </a>
+                                                            <a href="javascript:add(${book.id} )"> 入库 </a>
+                                                        </button>
+                                                        <button class="btn btn-toolbar btn-sm">
+                                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                                            <a href="javascript:sub(${book.id} )"> 出库 </a>
                                                         </button>
                                                     </th>
                                                 </tr>
@@ -236,25 +248,86 @@
 
 <jsp:include page="/common/commonjs.jsp"></jsp:include>
 
+<div id="book-modal-table" class="modal fade" tabindex="-1" style="padding-top: 300px">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="white">&times;</span>
+                    </button>
+                    该手机号用户详情
+                </div>
+            </div>
+
+            <div class="modal-body no-padding">
+                <table id="showDetail"
+                       class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">取消</a>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- PAGE CONTENT ENDS -->
 </body>
 
 </html>
 
 <script>
-    function del(aid){
-        var del=window.confirm("您确定要删除吗？");
-        if(del){
+    function up(ids){
+        var up=window.confirm("您确定要上架这本书吗？");
+
+        if(up){
             $.ajax({
                 type: "GET",
-                url: "admins"+"/"+aid,
+                url: "upBook"+"/"+ids,
                 dataType: "json",
                 success: function(data) {
-
                     alert(data.message);
                     location.reload();
                 }
             });
         }
+    }
+</script>
+
+<script>
+    function down(ids){
+        var down=window.confirm("您确定要下架这本书吗？");
+        if(down){
+            $.ajax({
+                type: "GET",
+                url: "downBook"+"/"+ids,
+                dataType: "json",
+                success: function(data) {
+                    alert(data.message);
+                    location.reload();
+                }
+            });
+        }
+    }
+</script>
+<script>
+    function loadData(id){
+
+        $.ajax({
+            type: "GET",
+            url: "bookById?id=" + $id,
+            dataType: "json",
+            success: function (data) {                    //result为返回值
+                var $showDetail = $('#showDetail');
+                var str = '';
+
+                $showDetail.html(str);
+            }
+        });
+
     }
 </script>
 

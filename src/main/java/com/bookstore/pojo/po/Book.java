@@ -1,5 +1,6 @@
 package com.bookstore.pojo.po;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class Book {
@@ -7,7 +8,7 @@ public class Book {
 
     private String bookname;
 
-    private Long price;
+    private BigDecimal price;
 
     private Long categoryId;
 
@@ -25,7 +26,15 @@ public class Book {
 
     private Integer salesVolume;
 
-    private Byte state;
+    private Integer status;
+
+    private Long likes;
+
+    private Long discount;
+
+    private String isbn;
+
+    private String image;
 
     public Long getId() {
         return id;
@@ -43,11 +52,11 @@ public class Book {
         this.bookname = bookname == null ? null : bookname.trim();
     }
 
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -115,11 +124,43 @@ public class Book {
         this.salesVolume = salesVolume;
     }
 
-    public Byte getState() {
-        return state;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setState(Byte state) {
-        this.state = state;
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Long getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Long likes) {
+        this.likes = likes;
+    }
+
+    public Long getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Long discount) {
+        this.discount = discount;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn == null ? null : isbn.trim();
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image == null ? null : image.trim();
     }
 }

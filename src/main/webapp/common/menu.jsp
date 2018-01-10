@@ -80,6 +80,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="saveBook">
+                        <i class="icon-double-angle-right"></i> 新增图书
+                    </a>
+                </li>
+                <li>
                     <a href="countBooks">
                         <i class="icon-double-angle-right"></i> 书籍分类统计
                     </a>
@@ -106,6 +111,64 @@
                         <i class="icon-double-angle-right"></i> 统计
                     </a>
                 </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span class="menu-text"> 前台管理 </span>
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="icon-double-angle-right"></i> 轮播图管理
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-double-angle-right"></i>公告管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span class="menu-text"> 报表管理 </span>
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="icon-double-angle-right"></i>入出库报表
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-double-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span class="menu-text"> 问答管理 </span>
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="#">
+                        <i class="icon-double-angle-right"></i>问答管理
+                    </a>
+                </li>
+
             </ul>
         </li>
     </ul>

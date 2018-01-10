@@ -9,15 +9,15 @@ public class Admin {
 
     private String password;
 
-    private Byte status;
-
     private Date createTime;
 
     private Date updateTime;
 
-    private String isDelete;
+    private Integer isDelete;
 
     private Date lastLoginTime;
+
+    private Integer jurisdiction;
 
     public Long getId() {
         return id;
@@ -43,14 +43,6 @@ public class Admin {
         this.password = password == null ? null : password.trim();
     }
 
-    public Byte getStatus() {
-        return status;
-    }
-
-    public void setStatus(Byte status) {
-        this.status = status;
-    }
-
     public Date getCreateTime() {
         return createTime;
     }
@@ -67,12 +59,12 @@ public class Admin {
         this.updateTime = updateTime;
     }
 
-    public String getIsDelete() {
+    public Integer getIsDelete() {
         return isDelete;
     }
 
-    public void setIsDelete(String isDelete) {
-        this.isDelete = isDelete == null ? null : isDelete.trim();
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 
     public Date getLastLoginTime() {
@@ -81,5 +73,13 @@ public class Admin {
 
     public void setLastLoginTime(Date lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
+    }
+
+    public Integer getJurisdiction() {
+        return jurisdiction;
+    }
+
+    public void setJurisdiction(Integer jurisdiction) {
+        this.jurisdiction = jurisdiction;
     }
 }

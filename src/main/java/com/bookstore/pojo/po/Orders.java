@@ -3,51 +3,81 @@ package com.bookstore.pojo.po;
 import java.util.Date;
 
 public class Orders {
-    private Long orderId;
+    private Long id;
 
-    private Long uid;
+    private Long userId;
 
-    private Date created;
+    private Date updateTime;
 
-    private Byte status;
+    private Date payTime;
+
+    private Date createTime;
+
+    private Date endTime;
+
+    private Integer status;
 
     private String recevierName;
 
-    private String addrId;
+    private String address;
 
     private String recevierTel;
 
     private String content;
 
-    public Long getOrderId() {
-        return orderId;
+    public Long getId() {
+        return id;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Long getUid() {
-        return uid;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUid(Long uid) {
-        this.uid = uid;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public Date getCreated() {
-        return created;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
-    public Byte getStatus() {
+    public Date getPayTime() {
+        return payTime;
+    }
+
+    public void setPayTime(Date payTime) {
+        this.payTime = payTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -59,12 +89,12 @@ public class Orders {
         this.recevierName = recevierName == null ? null : recevierName.trim();
     }
 
-    public String getAddrId() {
-        return addrId;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddrId(String addrId) {
-        this.addrId = addrId == null ? null : addrId.trim();
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 
     public String getRecevierTel() {

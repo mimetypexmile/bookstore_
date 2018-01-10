@@ -7,7 +7,13 @@ public class Comment {
 
     private String grade;
 
+    private String image;
+
     private Long bookId;
+
+    private Byte isPic;
+
+    private String ip;
 
     public Long getId() {
         return id;
@@ -33,11 +39,35 @@ public class Comment {
         this.grade = grade == null ? null : grade.trim();
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image == null ? null : image.trim();
+    }
+
     public Long getBookId() {
         return bookId;
     }
 
     public void setBookId(Long bookId) {
         this.bookId = bookId;
+    }
+
+    public Byte getIsPic() {
+        return isPic;
+    }
+
+    public void setIsPic(Byte isPic) {
+        this.isPic = isPic;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip == null ? null : ip.trim();
     }
 }

@@ -2,9 +2,8 @@ package com.bookstore.dao;
 
 import com.bookstore.pojo.po.User;
 import com.bookstore.pojo.po.UserExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     int countByExample(UserExample example);

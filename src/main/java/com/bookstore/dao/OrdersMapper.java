@@ -2,16 +2,15 @@ package com.bookstore.dao;
 
 import com.bookstore.pojo.po.Orders;
 import com.bookstore.pojo.po.OrdersExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface OrdersMapper {
     int countByExample(OrdersExample example);
 
     int deleteByExample(OrdersExample example);
 
-    int deleteByPrimaryKey(Long orderId);
+    int deleteByPrimaryKey(Long id);
 
     int insert(Orders record);
 
@@ -21,7 +20,7 @@ public interface OrdersMapper {
 
     List<Orders> selectByExample(OrdersExample example);
 
-    Orders selectByPrimaryKey(Long orderId);
+    Orders selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(@Param("record") Orders record, @Param("example") OrdersExample example);
 

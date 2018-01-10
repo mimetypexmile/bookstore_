@@ -304,6 +304,76 @@ public class CommentExample {
             return (Criteria) this;
         }
 
+        public Criteria andImageIsNull() {
+            addCriterion("image is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageIsNotNull() {
+            addCriterion("image is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageEqualTo(String value) {
+            addCriterion("image =", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNotEqualTo(String value) {
+            addCriterion("image <>", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageGreaterThan(String value) {
+            addCriterion("image >", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageGreaterThanOrEqualTo(String value) {
+            addCriterion("image >=", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageLessThan(String value) {
+            addCriterion("image <", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageLessThanOrEqualTo(String value) {
+            addCriterion("image <=", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageLike(String value) {
+            addCriterion("image like", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNotLike(String value) {
+            addCriterion("image not like", value, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageIn(List<String> values) {
+            addCriterion("image in", values, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNotIn(List<String> values) {
+            addCriterion("image not in", values, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageBetween(String value1, String value2) {
+            addCriterion("image between", value1, value2, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageNotBetween(String value1, String value2) {
+            addCriterion("image not between", value1, value2, "image");
+            return (Criteria) this;
+        }
+
         public Criteria andBookIdIsNull() {
             addCriterion("book_id is null");
             return (Criteria) this;
@@ -361,6 +431,136 @@ public class CommentExample {
 
         public Criteria andBookIdNotBetween(Long value1, Long value2) {
             addCriterion("book_id not between", value1, value2, "bookId");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicIsNull() {
+            addCriterion("is_Pic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicIsNotNull() {
+            addCriterion("is_Pic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicEqualTo(Byte value) {
+            addCriterion("is_Pic =", value, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicNotEqualTo(Byte value) {
+            addCriterion("is_Pic <>", value, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicGreaterThan(Byte value) {
+            addCriterion("is_Pic >", value, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_Pic >=", value, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicLessThan(Byte value) {
+            addCriterion("is_Pic <", value, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicLessThanOrEqualTo(Byte value) {
+            addCriterion("is_Pic <=", value, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicIn(List<Byte> values) {
+            addCriterion("is_Pic in", values, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicNotIn(List<Byte> values) {
+            addCriterion("is_Pic not in", values, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicBetween(Byte value1, Byte value2) {
+            addCriterion("is_Pic between", value1, value2, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsPicNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_Pic not between", value1, value2, "isPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpIsNull() {
+            addCriterion("IP is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpIsNotNull() {
+            addCriterion("IP is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpEqualTo(String value) {
+            addCriterion("IP =", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpNotEqualTo(String value) {
+            addCriterion("IP <>", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpGreaterThan(String value) {
+            addCriterion("IP >", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpGreaterThanOrEqualTo(String value) {
+            addCriterion("IP >=", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpLessThan(String value) {
+            addCriterion("IP <", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpLessThanOrEqualTo(String value) {
+            addCriterion("IP <=", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpLike(String value) {
+            addCriterion("IP like", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpNotLike(String value) {
+            addCriterion("IP not like", value, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpIn(List<String> values) {
+            addCriterion("IP in", values, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpNotIn(List<String> values) {
+            addCriterion("IP not in", values, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpBetween(String value1, String value2) {
+            addCriterion("IP between", value1, value2, "ip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIpNotBetween(String value1, String value2) {
+            addCriterion("IP not between", value1, value2, "ip");
             return (Criteria) this;
         }
     }

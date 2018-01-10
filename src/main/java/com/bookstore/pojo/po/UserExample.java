@@ -1,5 +1,6 @@
 package com.bookstore.pojo.po;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -625,63 +626,393 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andStateIsNull() {
-            addCriterion("state is null");
+        public Criteria andIsValidIsNull() {
+            addCriterion("is_valid is null");
             return (Criteria) this;
         }
 
-        public Criteria andStateIsNotNull() {
-            addCriterion("state is not null");
+        public Criteria andIsValidIsNotNull() {
+            addCriterion("is_valid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStateEqualTo(Byte value) {
-            addCriterion("state =", value, "state");
+        public Criteria andIsValidEqualTo(Integer value) {
+            addCriterion("is_valid =", value, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateNotEqualTo(Byte value) {
-            addCriterion("state <>", value, "state");
+        public Criteria andIsValidNotEqualTo(Integer value) {
+            addCriterion("is_valid <>", value, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateGreaterThan(Byte value) {
-            addCriterion("state >", value, "state");
+        public Criteria andIsValidGreaterThan(Integer value) {
+            addCriterion("is_valid >", value, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateGreaterThanOrEqualTo(Byte value) {
-            addCriterion("state >=", value, "state");
+        public Criteria andIsValidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("is_valid >=", value, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateLessThan(Byte value) {
-            addCriterion("state <", value, "state");
+        public Criteria andIsValidLessThan(Integer value) {
+            addCriterion("is_valid <", value, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateLessThanOrEqualTo(Byte value) {
-            addCriterion("state <=", value, "state");
+        public Criteria andIsValidLessThanOrEqualTo(Integer value) {
+            addCriterion("is_valid <=", value, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateIn(List<Byte> values) {
-            addCriterion("state in", values, "state");
+        public Criteria andIsValidIn(List<Integer> values) {
+            addCriterion("is_valid in", values, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateNotIn(List<Byte> values) {
-            addCriterion("state not in", values, "state");
+        public Criteria andIsValidNotIn(List<Integer> values) {
+            addCriterion("is_valid not in", values, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateBetween(Byte value1, Byte value2) {
-            addCriterion("state between", value1, value2, "state");
+        public Criteria andIsValidBetween(Integer value1, Integer value2) {
+            addCriterion("is_valid between", value1, value2, "isValid");
             return (Criteria) this;
         }
 
-        public Criteria andStateNotBetween(Byte value1, Byte value2) {
-            addCriterion("state not between", value1, value2, "state");
+        public Criteria andIsValidNotBetween(Integer value1, Integer value2) {
+            addCriterion("is_valid not between", value1, value2, "isValid");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipIsNull() {
+            addCriterion("isVIP is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipIsNotNull() {
+            addCriterion("isVIP is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipEqualTo(Integer value) {
+            addCriterion("isVIP =", value, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipNotEqualTo(Integer value) {
+            addCriterion("isVIP <>", value, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipGreaterThan(Integer value) {
+            addCriterion("isVIP >", value, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipGreaterThanOrEqualTo(Integer value) {
+            addCriterion("isVIP >=", value, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipLessThan(Integer value) {
+            addCriterion("isVIP <", value, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipLessThanOrEqualTo(Integer value) {
+            addCriterion("isVIP <=", value, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipIn(List<Integer> values) {
+            addCriterion("isVIP in", values, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipNotIn(List<Integer> values) {
+            addCriterion("isVIP not in", values, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipBetween(Integer value1, Integer value2) {
+            addCriterion("isVIP between", value1, value2, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsvipNotBetween(Integer value1, Integer value2) {
+            addCriterion("isVIP not between", value1, value2, "isvip");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationIsNull() {
+            addCriterion("integration is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationIsNotNull() {
+            addCriterion("integration is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationEqualTo(String value) {
+            addCriterion("integration =", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationNotEqualTo(String value) {
+            addCriterion("integration <>", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationGreaterThan(String value) {
+            addCriterion("integration >", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationGreaterThanOrEqualTo(String value) {
+            addCriterion("integration >=", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationLessThan(String value) {
+            addCriterion("integration <", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationLessThanOrEqualTo(String value) {
+            addCriterion("integration <=", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationLike(String value) {
+            addCriterion("integration like", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationNotLike(String value) {
+            addCriterion("integration not like", value, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationIn(List<String> values) {
+            addCriterion("integration in", values, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationNotIn(List<String> values) {
+            addCriterion("integration not in", values, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationBetween(String value1, String value2) {
+            addCriterion("integration between", value1, value2, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andIntegrationNotBetween(String value1, String value2) {
+            addCriterion("integration not between", value1, value2, "integration");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordIsNull() {
+            addCriterion("pay_password is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordIsNotNull() {
+            addCriterion("pay_password is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordEqualTo(String value) {
+            addCriterion("pay_password =", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotEqualTo(String value) {
+            addCriterion("pay_password <>", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordGreaterThan(String value) {
+            addCriterion("pay_password >", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordGreaterThanOrEqualTo(String value) {
+            addCriterion("pay_password >=", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordLessThan(String value) {
+            addCriterion("pay_password <", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordLessThanOrEqualTo(String value) {
+            addCriterion("pay_password <=", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordLike(String value) {
+            addCriterion("pay_password like", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotLike(String value) {
+            addCriterion("pay_password not like", value, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordIn(List<String> values) {
+            addCriterion("pay_password in", values, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotIn(List<String> values) {
+            addCriterion("pay_password not in", values, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordBetween(String value1, String value2) {
+            addCriterion("pay_password between", value1, value2, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andPayPasswordNotBetween(String value1, String value2) {
+            addCriterion("pay_password not between", value1, value2, "payPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardIsNull() {
+            addCriterion("\" identity_card\" is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardIsNotNull() {
+            addCriterion("\" identity_card\" is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardEqualTo(String value) {
+            addCriterion("\" identity_card\" =", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardNotEqualTo(String value) {
+            addCriterion("\" identity_card\" <>", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardGreaterThan(String value) {
+            addCriterion("\" identity_card\" >", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardGreaterThanOrEqualTo(String value) {
+            addCriterion("\" identity_card\" >=", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardLessThan(String value) {
+            addCriterion("\" identity_card\" <", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardLessThanOrEqualTo(String value) {
+            addCriterion("\" identity_card\" <=", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardLike(String value) {
+            addCriterion("\" identity_card\" like", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardNotLike(String value) {
+            addCriterion("\" identity_card\" not like", value, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardIn(List<String> values) {
+            addCriterion("\" identity_card\" in", values, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardNotIn(List<String> values) {
+            addCriterion("\" identity_card\" not in", values, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardBetween(String value1, String value2) {
+            addCriterion("\" identity_card\" between", value1, value2, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdentityCardNotBetween(String value1, String value2) {
+            addCriterion("\" identity_card\" not between", value1, value2, "identityCard");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountIsNull() {
+            addCriterion("consumption_amount is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountIsNotNull() {
+            addCriterion("consumption_amount is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountEqualTo(BigDecimal value) {
+            addCriterion("consumption_amount =", value, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountNotEqualTo(BigDecimal value) {
+            addCriterion("consumption_amount <>", value, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountGreaterThan(BigDecimal value) {
+            addCriterion("consumption_amount >", value, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("consumption_amount >=", value, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountLessThan(BigDecimal value) {
+            addCriterion("consumption_amount <", value, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("consumption_amount <=", value, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountIn(List<BigDecimal> values) {
+            addCriterion("consumption_amount in", values, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountNotIn(List<BigDecimal> values) {
+            addCriterion("consumption_amount not in", values, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("consumption_amount between", value1, value2, "consumptionAmount");
+            return (Criteria) this;
+        }
+
+        public Criteria andConsumptionAmountNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("consumption_amount not between", value1, value2, "consumptionAmount");
             return (Criteria) this;
         }
     }

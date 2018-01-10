@@ -2,9 +2,8 @@ package com.bookstore.dao;
 
 import com.bookstore.pojo.po.Address;
 import com.bookstore.pojo.po.AddressExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface AddressMapper {
     int countByExample(AddressExample example);

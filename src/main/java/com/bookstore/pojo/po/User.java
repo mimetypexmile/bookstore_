@@ -1,5 +1,6 @@
 package com.bookstore.pojo.po;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class User {
@@ -19,7 +20,17 @@ public class User {
 
     private Long addrId;
 
-    private Byte state;
+    private Integer isValid;
+
+    private Integer isvip;
+
+    private String integration;
+
+    private String payPassword;
+
+    private String identityCard;
+
+    private BigDecimal consumptionAmount;
 
     public Long getId() {
         return id;
@@ -85,11 +96,51 @@ public class User {
         this.addrId = addrId;
     }
 
-    public Byte getState() {
-        return state;
+    public Integer getIsValid() {
+        return isValid;
     }
 
-    public void setState(Byte state) {
-        this.state = state;
+    public void setIsValid(Integer isValid) {
+        this.isValid = isValid;
+    }
+
+    public Integer getIsvip() {
+        return isvip;
+    }
+
+    public void setIsvip(Integer isvip) {
+        this.isvip = isvip;
+    }
+
+    public String getIntegration() {
+        return integration;
+    }
+
+    public void setIntegration(String integration) {
+        this.integration = integration == null ? null : integration.trim();
+    }
+
+    public String getPayPassword() {
+        return payPassword;
+    }
+
+    public void setPayPassword(String payPassword) {
+        this.payPassword = payPassword == null ? null : payPassword.trim();
+    }
+
+    public String getIdentityCard() {
+        return identityCard;
+    }
+
+    public void setIdentityCard(String identityCard) {
+        this.identityCard = identityCard == null ? null : identityCard.trim();
+    }
+
+    public BigDecimal getConsumptionAmount() {
+        return consumptionAmount;
+    }
+
+    public void setConsumptionAmount(BigDecimal consumptionAmount) {
+        this.consumptionAmount = consumptionAmount;
     }
 }

@@ -2,9 +2,8 @@ package com.bookstore.dao;
 
 import com.bookstore.pojo.po.Province;
 import com.bookstore.pojo.po.ProvinceExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface ProvinceMapper {
     int countByExample(ProvinceExample example);

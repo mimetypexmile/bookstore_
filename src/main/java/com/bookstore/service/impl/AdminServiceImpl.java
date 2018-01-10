@@ -2,6 +2,7 @@ package com.bookstore.service.impl;
 
 import com.bookstore.common.util.MD5Util;
 import com.bookstore.common.util.MessageResult;
+import com.bookstore.dao.AdminCustomMapper;
 import com.bookstore.dao.AdminMapper;
 import com.bookstore.pojo.po.Admin;
 import com.bookstore.pojo.po.AdminExample;
@@ -14,30 +15,26 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-
 @Service
-public class AdminServiceImpl implements AdminService {
+public class AdminServiceImpl implements AdminService{
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private AdminMapper adminMapper;
+
+    @Autowired
+    private AdminCustomMapper adminCustomMapper;
     @Override
-    public Admin getAdminById(Long id) {
-        Admin admin = null;
-        try {
-            admin = adminMapper.selectByPrimaryKey(id);
-        }catch (Exception e){
-            logger.error(e.getMessage(),e);
-        }
-        return admin;
+    public Admin getAdminById() {
+        return null;
     }
 
     @Override
-    public List<Admin> listAdmins() {
+    public List<Admin> listAdmins(String query,Integer jurisdiction) {
         List<Admin> list = null;
         try {
-            list = adminMapper.selectByExample(null);
+            list=  adminCustomMapper.listAdminsByQuery(query,jurisdiction);
         }catch (Exception e){
             logger.error(e.getMessage(),e);
         }
@@ -51,8 +48,7 @@ public class AdminServiceImpl implements AdminService {
         admin.setPassword(MD5Util.MD5(admin.getPassword()));
         admin.setCreateTime(new Date());
         admin.setUpdateTime(new Date());
-        admin.setIsDelete("0");
-        admin.setStatus((byte)0);
+        admin.setIsDelete(0);
         int count = 0;
         try {
             count = adminMapper.insertSelective(admin);
@@ -95,20 +91,48 @@ public class AdminServiceImpl implements AdminService {
                 example1.createCriteria().andIdEqualTo(existAdmin.getId());
                 adminMapper.updateByExampleSelective(existAdmin,example1);
             }
-            if(existAdmin!= null &&existAdmin.getIsDelete() == "0"){
-                //todo 更新数据库的上一次登陆时间
-//                Admin updateAdmin =  new Admin();
-//                updateAdmin.setLastLoginTime(new Date());
-//                AdminExample example1 = new AdminExample();
-//                AdminExample.Criteria criteria1 = example.createCriteria();
-//                criteria1.andIdEqualTo(existAdmin.getId());
-//                int i = adminMapper.updateByExampleSelective(updateAdmin, example1);
-//                System.out.println(i);
-            }
+
         }catch (Exception e) {
             logger.error(e.getMessage(), e);
         }
 
         return existAdmin;
+    }
+
+    @Override
+    public MessageResult banAdmin(List<Long> ids) {
+        MessageResult mr = new MessageResult();
+        AdminExample example = new AdminExample();
+        AdminExample.Criteria criteria = example.createCriteria();
+        criteria.andIdIn(ids);
+        Admin record = new Admin();
+        record.setIsDelete(99);
+        int count = adminMapper.updateByExampleSelective(record,example);
+        if(count>0){
+            mr.setSuccess(true);
+            mr.setMessage("禁用成功");
+        }else {
+            mr.setSuccess(false);
+            mr.setMessage("未知错误,禁用失败了");
+        }
+        return mr;
+    }
+    @Override
+    public MessageResult unbanAdmin(List<Long> ids) {
+        MessageResult mr = new MessageResult();
+        AdminExample example = new AdminExample();
+        AdminExample.Criteria criteria = example.createCriteria();
+        criteria.andIdIn(ids);
+        Admin record = new Admin();
+        record.setIsDelete(0);
+        int count = adminMapper.updateByExampleSelective(record,example);
+        if(count>0){
+            mr.setSuccess(true);
+            mr.setMessage("解除成功");
+        }else {
+            mr.setSuccess(false);
+            mr.setMessage("未知错误,操作失败了");
+        }
+        return mr;
     }
 }

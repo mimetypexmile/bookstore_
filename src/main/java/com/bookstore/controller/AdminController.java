@@ -21,33 +21,32 @@ import java.util.List;
 @Controller
 public class AdminController {
 
-    private Logger logger = LoggerFactory.getLogger(getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private AdminService adminService;
-    @ResponseBody
-    @RequestMapping("/admin")
-    public Admin getAdminById(Long id){
 
-        Admin admin = null;
-        try {
-            admin = adminService.getAdminById(id);
-        }catch (Exception e){
-
-            logger.error(e.getMessage(),e);
-        }
-
-        return admin;
-    }
-
+//    @ResponseBody
+//    @RequestMapping("/getAdmin")
+//    public Admin getAdminById(){
+//        return adminService.getAdminById();
+//    }
     //查询所有的管理员
     @RequestMapping(value = "/listAdmins")
-    public String listAdmins(Model model , @RequestParam(value = "pn",defaultValue ="1")Integer pn) {
-
+    public String listAdmins(Model model , @RequestParam(value = "pn",defaultValue ="1")Integer pn,@RequestParam(defaultValue = "") String query,@RequestParam(defaultValue = "") Integer jurisdiction,HttpSession session) {
+        String encodeQuery = null;
+        try {
+            encodeQuery = java.net.URLDecoder.decode(query, "UTF-8");
+            System.out.println(encodeQuery);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         PageHelper.startPage(pn,4);
-        List<Admin> adminList = adminService.listAdmins();
+        List<Admin> adminList = adminService.listAdmins(query,jurisdiction);
+
         //todo 泛型需要自己写vo
         PageInfo<Admin> pageInfo = new PageInfo(adminList);
-
+        session.setAttribute("query", encodeQuery);
+        session.setAttribute("jurisdiction", jurisdiction);
         model.addAttribute("pageInfo",pageInfo);
         return "admin_list";
     }
@@ -56,7 +55,7 @@ public class AdminController {
     @RequestMapping(value = "/admin",method = RequestMethod.POST)
     @ResponseBody
     public MessageResult saveAdmin(Admin admin) {
-
+        System.out.println(admin.getJurisdiction());
         MessageResult ms = new MessageResult();
 
         int count = 0;
@@ -79,6 +78,7 @@ public class AdminController {
         }
         return ms;
     }
+
     //ajax 去查询管理员名是否存在
     @RequestMapping(value = "/admin/{name}", produces = "application/json;charset=UTF-8", method = RequestMethod.GET)
     @ResponseBody
@@ -101,7 +101,6 @@ public class AdminController {
         } catch (Exception e) {
             logger.error(e.getMessage(),e);
         }
-
         return mr;
     }
 
@@ -158,5 +157,30 @@ public class AdminController {
         return "redirect:toLogin";
     }
 
+    //禁用一个管理员
+    @RequestMapping("/banAdmin/{ids}")
+    @ResponseBody
+    public MessageResult banAdmin(@PathVariable List<Long> ids){
 
+        MessageResult mr = null;
+        try {
+            mr = adminService.banAdmin(ids);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+        }
+        return mr;
+    }
+    //解除禁用一个管理员
+    @RequestMapping("/unbanAdmin/{ids}")
+    @ResponseBody
+    public MessageResult unbanAdmin(@PathVariable List<Long> ids){
+
+        MessageResult mr = null;
+        try {
+            mr = adminService.unbanAdmin(ids);
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+        }
+        return mr;
+    }
 }

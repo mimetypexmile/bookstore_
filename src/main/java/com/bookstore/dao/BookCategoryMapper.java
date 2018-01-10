@@ -2,9 +2,8 @@ package com.bookstore.dao;
 
 import com.bookstore.pojo.po.BookCategory;
 import com.bookstore.pojo.po.BookCategoryExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface BookCategoryMapper {
     int countByExample(BookCategoryExample example);

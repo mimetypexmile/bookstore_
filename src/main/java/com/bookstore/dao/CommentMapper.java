@@ -2,9 +2,8 @@ package com.bookstore.dao;
 
 import com.bookstore.pojo.po.Comment;
 import com.bookstore.pojo.po.CommentExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface CommentMapper {
     int countByExample(CommentExample example);

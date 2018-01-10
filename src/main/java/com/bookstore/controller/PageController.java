@@ -29,7 +29,7 @@ public class PageController {
      * 新增一个管理员页面的控制器
      * @return
      */
-    @RequestMapping("toSignup")
+    @RequestMapping("/toSignup")
     public String toSignupPage(){
         return "signup";
     }

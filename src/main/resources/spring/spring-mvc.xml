@@ -20,17 +20,6 @@
     <mvc:annotation-driven/>
     <!--配置拦截器  多个顺序执行-->
     <!--<mvc:interceptors>-->
-
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/**/"/>-->
-            <!--<bean class="com.lepu.ychat.interceptor.AllInterceptor"></bean>-->
-        <!--</mvc:interceptor>-->
-        <!--日志统一记录-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/**/"/>-->
-            <!--<bean class="com.lepu.ychat.interceptor.LogInterceptor"></bean>-->
-        <!--</mvc:interceptor>-->
-
         <!--登录拦截器-->
         <!--<mvc:interceptor>-->
             <!--<mvc:mapping path="/**/"/>-->

@@ -6,9 +6,18 @@ import com.bookstore.pojo.po.Admin;
 import java.util.List;
 
 public interface AdminService {
-    Admin getAdminById(Long id);
-    List<Admin> listAdmins();
+
+    public Admin getAdminById();
+
+    List<Admin> listAdmins(String query,Integer jurisdiction);
+
     int saveAdmin(Admin admin);
-    MessageResult getAdminByName(String name);
+
+    MessageResult getAdminByName(String loginName);
+
     Admin login(Admin admin);
+
+    MessageResult banAdmin(List<Long> ids);
+
+    MessageResult unbanAdmin(List<Long> ids);
 }

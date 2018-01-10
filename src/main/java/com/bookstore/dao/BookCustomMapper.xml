@@ -3,8 +3,8 @@
 <mapper namespace="com.bookstore.dao.BookCustomMapper">
 
     <sql id="Base_Column_List">
-    id, bookname, price, category_id, author, publish_time, sell_point, created, updated, 
-    inventory, sales_volume, state
+    b.id, b.bookname, b.price, b.category_id, b.author, b.publish_time, b.sell_point, b.created, b.updated,
+    b.inventory, b.sales_volume,bc.name as categoryName
   </sql>
 
     <select id="countBooks" resultType="com.bookstore.pojo.vo.CountBook">
@@ -17,4 +17,11 @@
         sum(case when b.category_id in (37,38,39) then 1 else 0 end ) exam
     from book b;
   </select>
+
+    <select id="getBookForBack" resultType="com.bookstore.pojo.vo.BookVO">
+        SELECT
+        <include refid="Base_Column_List" />
+        from book b LEFT JOIN book_category bc on b.category_id = bc.id
+        where b.id= #{id}
+    </select>
 </mapper>

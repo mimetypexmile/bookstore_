@@ -5,7 +5,10 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="book_id" property="bookId" jdbcType="BIGINT" />
+    <result column="is_Pic" property="isPic" jdbcType="TINYINT" />
+    <result column="IP" property="ip" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, content, grade, book_id
+    id, content, grade, image, book_id, is_Pic, IP
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bookstore.pojo.po.CommentExample" >
     select
@@ -100,9 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.bookstore.pojo.po.Comment" >
     insert into comment (id, content, grade, 
-      book_id)
+      image, book_id, is_Pic, 
+      IP)
     values (#{id,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}, 
-      #{bookId,jdbcType=BIGINT})
+      #{image,jdbcType=VARCHAR}, #{bookId,jdbcType=BIGINT}, #{isPic,jdbcType=TINYINT}, 
+      #{ip,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.bookstore.pojo.po.Comment" >
     insert into comment
@@ -116,8 +121,17 @@
       <if test="grade != null" >
         grade,
       </if>
+      <if test="image != null" >
+        image,
+      </if>
       <if test="bookId != null" >
         book_id,
+      </if>
+      <if test="isPic != null" >
+        is_Pic,
+      </if>
+      <if test="ip != null" >
+        IP,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -130,8 +144,17 @@
       <if test="grade != null" >
         #{grade,jdbcType=VARCHAR},
       </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
       <if test="bookId != null" >
         #{bookId,jdbcType=BIGINT},
+      </if>
+      <if test="isPic != null" >
+        #{isPic,jdbcType=TINYINT},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -153,8 +176,17 @@
       <if test="record.grade != null" >
         grade = #{record.grade,jdbcType=VARCHAR},
       </if>
+      <if test="record.image != null" >
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
       <if test="record.bookId != null" >
         book_id = #{record.bookId,jdbcType=BIGINT},
+      </if>
+      <if test="record.isPic != null" >
+        is_Pic = #{record.isPic,jdbcType=TINYINT},
+      </if>
+      <if test="record.ip != null" >
+        IP = #{record.ip,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -166,7 +198,10 @@
     set id = #{record.id,jdbcType=BIGINT},
       content = #{record.content,jdbcType=VARCHAR},
       grade = #{record.grade,jdbcType=VARCHAR},
-      book_id = #{record.bookId,jdbcType=BIGINT}
+      image = #{record.image,jdbcType=VARCHAR},
+      book_id = #{record.bookId,jdbcType=BIGINT},
+      is_Pic = #{record.isPic,jdbcType=TINYINT},
+      IP = #{record.ip,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -180,8 +215,17 @@
       <if test="grade != null" >
         grade = #{grade,jdbcType=VARCHAR},
       </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
       <if test="bookId != null" >
         book_id = #{bookId,jdbcType=BIGINT},
+      </if>
+      <if test="isPic != null" >
+        is_Pic = #{isPic,jdbcType=TINYINT},
+      </if>
+      <if test="ip != null" >
+        IP = #{ip,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -190,7 +234,10 @@
     update comment
     set content = #{content,jdbcType=VARCHAR},
       grade = #{grade,jdbcType=VARCHAR},
-      book_id = #{bookId,jdbcType=BIGINT}
+      image = #{image,jdbcType=VARCHAR},
+      book_id = #{bookId,jdbcType=BIGINT},
+      is_Pic = #{isPic,jdbcType=TINYINT},
+      IP = #{ip,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -305,66 +305,6 @@ public class AdminExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusIsNull() {
-            addCriterion("status is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIsNotNull() {
-            addCriterion("status is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusEqualTo(Byte value) {
-            addCriterion("status =", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotEqualTo(Byte value) {
-            addCriterion("status <>", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThan(Byte value) {
-            addCriterion("status >", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThanOrEqualTo(Byte value) {
-            addCriterion("status >=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThan(Byte value) {
-            addCriterion("status <", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThanOrEqualTo(Byte value) {
-            addCriterion("status <=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIn(List<Byte> values) {
-            addCriterion("status in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotIn(List<Byte> values) {
-            addCriterion("status not in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusBetween(Byte value1, Byte value2) {
-            addCriterion("status between", value1, value2, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotBetween(Byte value1, Byte value2) {
-            addCriterion("status not between", value1, value2, "status");
-            return (Criteria) this;
-        }
-
         public Criteria andCreateTimeIsNull() {
             addCriterion("create_time is null");
             return (Criteria) this;
@@ -495,62 +435,52 @@ public class AdminExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteEqualTo(String value) {
+        public Criteria andIsDeleteEqualTo(Integer value) {
             addCriterion("is_delete =", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteNotEqualTo(String value) {
+        public Criteria andIsDeleteNotEqualTo(Integer value) {
             addCriterion("is_delete <>", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteGreaterThan(String value) {
+        public Criteria andIsDeleteGreaterThan(Integer value) {
             addCriterion("is_delete >", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteGreaterThanOrEqualTo(String value) {
+        public Criteria andIsDeleteGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_delete >=", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteLessThan(String value) {
+        public Criteria andIsDeleteLessThan(Integer value) {
             addCriterion("is_delete <", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteLessThanOrEqualTo(String value) {
+        public Criteria andIsDeleteLessThanOrEqualTo(Integer value) {
             addCriterion("is_delete <=", value, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteLike(String value) {
-            addCriterion("is_delete like", value, "isDelete");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDeleteNotLike(String value) {
-            addCriterion("is_delete not like", value, "isDelete");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDeleteIn(List<String> values) {
+        public Criteria andIsDeleteIn(List<Integer> values) {
             addCriterion("is_delete in", values, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteNotIn(List<String> values) {
+        public Criteria andIsDeleteNotIn(List<Integer> values) {
             addCriterion("is_delete not in", values, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteBetween(String value1, String value2) {
+        public Criteria andIsDeleteBetween(Integer value1, Integer value2) {
             addCriterion("is_delete between", value1, value2, "isDelete");
             return (Criteria) this;
         }
 
-        public Criteria andIsDeleteNotBetween(String value1, String value2) {
+        public Criteria andIsDeleteNotBetween(Integer value1, Integer value2) {
             addCriterion("is_delete not between", value1, value2, "isDelete");
             return (Criteria) this;
         }
@@ -612,6 +542,66 @@ public class AdminExample {
 
         public Criteria andLastLoginTimeNotBetween(Date value1, Date value2) {
             addCriterion("last_login_time not between", value1, value2, "lastLoginTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionIsNull() {
+            addCriterion("jurisdiction is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionIsNotNull() {
+            addCriterion("jurisdiction is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionEqualTo(Integer value) {
+            addCriterion("jurisdiction =", value, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionNotEqualTo(Integer value) {
+            addCriterion("jurisdiction <>", value, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionGreaterThan(Integer value) {
+            addCriterion("jurisdiction >", value, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionGreaterThanOrEqualTo(Integer value) {
+            addCriterion("jurisdiction >=", value, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionLessThan(Integer value) {
+            addCriterion("jurisdiction <", value, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionLessThanOrEqualTo(Integer value) {
+            addCriterion("jurisdiction <=", value, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionIn(List<Integer> values) {
+            addCriterion("jurisdiction in", values, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionNotIn(List<Integer> values) {
+            addCriterion("jurisdiction not in", values, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionBetween(Integer value1, Integer value2) {
+            addCriterion("jurisdiction between", value1, value2, "jurisdiction");
+            return (Criteria) this;
+        }
+
+        public Criteria andJurisdictionNotBetween(Integer value1, Integer value2) {
+            addCriterion("jurisdiction not between", value1, value2, "jurisdiction");
             return (Criteria) this;
         }
     }
