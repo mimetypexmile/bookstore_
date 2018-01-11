@@ -1,6 +1,7 @@
 package com.bookstore.service;
 
 import com.bookstore.common.util.MessageResult;
+import com.bookstore.pojo.po.Admin;
 import com.bookstore.pojo.po.Comment;
 import com.bookstore.pojo.po.User;
 
@@ -10,6 +11,7 @@ import java.util.Map;
 public interface UserService {
 
     //ajax 校验用户名是否存在
+    MessageResult getUserByName(String loginName);
 
     //注册一个用户
     int registerUser(User user);
@@ -39,4 +41,8 @@ public interface UserService {
 
     //评论增加积分
     MessageResult totalIntegrationByComment(Comment comment);
+
+    User login(User user);
+
+
 }

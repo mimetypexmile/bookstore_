@@ -1,5 +1,6 @@
 package com.bookstore.service.impl;
 
+import com.bookstore.common.util.JsonUtils;
 import com.bookstore.common.util.MessageResult;
 import com.bookstore.dao.BookCustomMapper;
 import com.bookstore.dao.BookMapper;
@@ -24,7 +25,23 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public MessageResult saveBook(Book book) {
-        return null;
+        String s = JsonUtils.objectToJson(book);
+        MessageResult messageResult = new MessageResult();
+        try {
+            int count = bookMapper.insertSelective(book);
+            if(count >0){
+                messageResult.setSuccess(true);
+                messageResult.setMessage("插入成功");
+                messageResult.setData(s);
+            }else {
+                messageResult.setMessage("操作失败");
+                messageResult.setSuccess(false);
+            }
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+        }
+
+        return messageResult;
     }
 
     @Override
@@ -90,23 +107,42 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookVO> listBook_new() {
-        return null;
+        List<BookVO> list = null;
+        try {
+            list =  bookCustomMapper.listBook_new();
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+        }
+        return list;
     }
+
 
     @Override
     public List<BookVO> listBook_recommended() {
-        return null;
+        List<BookVO> list = null;
+        try {
+            list =  bookCustomMapper.listBook_recommended();
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+        }
+        return list;
     }
 
     @Override
     public List<BookVO> listBook_specialSupply() {
-        return null;
+        List<BookVO> list = null;
+        try {
+            list =  bookCustomMapper.listBook_specialSupply();
+        }catch (Exception e){
+            logger.error(e.getMessage(),e);
+        }
+        return list;
     }
 
     @Override
     public BookVO getBookForProtal(Long id) {
+        return bookCustomMapper.getBookForProtal(id);
 
-        return null;
     }
 
     @Override

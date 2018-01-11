@@ -3,8 +3,8 @@
 <mapper namespace="com.bookstore.dao.BookCustomMapper">
 
     <sql id="Base_Column_List">
-    b.id, b.bookname, b.price, b.category_id, b.author, b.publish_time, b.sell_point, b.created, b.updated,
-    b.inventory, b.sales_volume,bc.name as categoryName
+    b.id, b.bookname, b.price, b.category_id, b.author, b.publish_time, b.sell_point as sellPoint,b.image, b.created, b.updated,
+    b.inventory, b.sales_volume,b.kinds,b.discount,bc.name as categoryName
   </sql>
 
     <select id="countBooks" resultType="com.bookstore.pojo.vo.CountBook">
@@ -23,5 +23,32 @@
         <include refid="Base_Column_List" />
         from book b LEFT JOIN book_category bc on b.category_id = bc.id
         where b.id= #{id}
+    </select>
+    <select id="getBookForProtal" resultType="com.bookstore.pojo.vo.BookVO">
+        SELECT
+        <include refid="Base_Column_List" />
+        from book b LEFT JOIN book_category bc on b.category_id = bc.id
+        where b.id= #{id}
+    </select>
+
+    <select id="listBook_new" resultType="com.bookstore.pojo.vo.BookVO">
+        SELECT
+        <include refid="Base_Column_List" />
+        from book b LEFT JOIN book_category bc on b.category_id = bc.id
+        where b.status =1 and b.kinds=1  order by b.created DESC limit 0,3
+    </select>
+
+    <select id="listBook_recommended" resultType="com.bookstore.pojo.vo.BookVO">
+        SELECT
+        <include refid="Base_Column_List" />
+        from book b LEFT JOIN book_category bc on b.category_id = bc.id
+        where b.status =1 and b.kinds=2  order by b.created DESC limit 0,3
+    </select>
+
+    <select id="listBook_specialSupply" resultType="com.bookstore.pojo.vo.BookVO">
+        SELECT
+        <include refid="Base_Column_List" />
+        from book b LEFT JOIN book_category bc on b.category_id = bc.id
+        where b.status =1 and b.kinds=3  order by b.created DESC limit 0,3
     </select>
 </mapper>

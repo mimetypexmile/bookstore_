@@ -30,11 +30,13 @@ public class Book {
 
     private Long likes;
 
-    private Long discount;
+    private BigDecimal discount;
 
     private String isbn;
 
     private String image;
+
+    private Integer kinds;
 
     public Long getId() {
         return id;
@@ -140,11 +142,11 @@ public class Book {
         this.likes = likes;
     }
 
-    public Long getDiscount() {
+    public BigDecimal getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Long discount) {
+    public void setDiscount(BigDecimal discount) {
         this.discount = discount;
     }
 
@@ -162,5 +164,13 @@ public class Book {
 
     public void setImage(String image) {
         this.image = image == null ? null : image.trim();
+    }
+
+    public Integer getKinds() {
+        return kinds;
+    }
+
+    public void setKinds(Integer kinds) {
+        this.kinds = kinds;
     }
 }

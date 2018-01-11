@@ -80,7 +80,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="saveBook">
+                    <a href="addBook">
                         <i class="icon-double-angle-right"></i> 新增图书
                     </a>
                 </li>

@@ -926,52 +926,52 @@ public class BookExample {
             return (Criteria) this;
         }
 
-        public Criteria andDiscountEqualTo(Long value) {
+        public Criteria andDiscountEqualTo(BigDecimal value) {
             addCriterion("discount =", value, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountNotEqualTo(Long value) {
+        public Criteria andDiscountNotEqualTo(BigDecimal value) {
             addCriterion("discount <>", value, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountGreaterThan(Long value) {
+        public Criteria andDiscountGreaterThan(BigDecimal value) {
             addCriterion("discount >", value, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountGreaterThanOrEqualTo(Long value) {
+        public Criteria andDiscountGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("discount >=", value, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountLessThan(Long value) {
+        public Criteria andDiscountLessThan(BigDecimal value) {
             addCriterion("discount <", value, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountLessThanOrEqualTo(Long value) {
+        public Criteria andDiscountLessThanOrEqualTo(BigDecimal value) {
             addCriterion("discount <=", value, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountIn(List<Long> values) {
+        public Criteria andDiscountIn(List<BigDecimal> values) {
             addCriterion("discount in", values, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountNotIn(List<Long> values) {
+        public Criteria andDiscountNotIn(List<BigDecimal> values) {
             addCriterion("discount not in", values, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountBetween(Long value1, Long value2) {
+        public Criteria andDiscountBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("discount between", value1, value2, "discount");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountNotBetween(Long value1, Long value2) {
+        public Criteria andDiscountNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("discount not between", value1, value2, "discount");
             return (Criteria) this;
         }
@@ -1113,6 +1113,66 @@ public class BookExample {
 
         public Criteria andImageNotBetween(String value1, String value2) {
             addCriterion("image not between", value1, value2, "image");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsIsNull() {
+            addCriterion("kinds is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsIsNotNull() {
+            addCriterion("kinds is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsEqualTo(Integer value) {
+            addCriterion("kinds =", value, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsNotEqualTo(Integer value) {
+            addCriterion("kinds <>", value, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsGreaterThan(Integer value) {
+            addCriterion("kinds >", value, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("kinds >=", value, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsLessThan(Integer value) {
+            addCriterion("kinds <", value, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsLessThanOrEqualTo(Integer value) {
+            addCriterion("kinds <=", value, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsIn(List<Integer> values) {
+            addCriterion("kinds in", values, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsNotIn(List<Integer> values) {
+            addCriterion("kinds not in", values, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsBetween(Integer value1, Integer value2) {
+            addCriterion("kinds between", value1, value2, "kinds");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindsNotBetween(Integer value1, Integer value2) {
+            addCriterion("kinds not between", value1, value2, "kinds");
             return (Criteria) this;
         }
     }

@@ -38,4 +38,33 @@ public class PageController {
     public String toOrders(){
         return "user_order_timeline";
     }
+
+    @RequestMapping("/protal")
+    public String toProtal(){
+        return "protal";
+    }
+
+    @RequestMapping("/protal_detail")
+    public String toDetail(){
+        return "protal_detail";
+    }
+    @RequestMapping("/cart")
+    public String toCart(){
+        return "cart";
+    }
+
+    @RequestMapping("/addBook")
+    public String toAddBook(){
+        return "add_book";
+    }
+
+    @RequestMapping("/toLoginProtal")
+    public String toProtalLogin(){
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String toRegister(){
+        return "register";
+    }
 }
